@@ -27,6 +27,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByIdIn(List<Long> userIds);
 @Query("select u.favorite_movie_id from User u where u.id=?1")
 List<Movie> getFavoriteMovie(Long userId);
+    @Query("SELECT\n" +
+            "    CASE WHEN EXISTS \n" +
+            "       ( SELECT u FROM User u WHERE u.username=?1)THEN 'TRUE' ELSE 'FALSE' END")
     Boolean existsByUsername(String username);
 @Query("SELECT\n" +
         "    CASE WHEN EXISTS \n" +

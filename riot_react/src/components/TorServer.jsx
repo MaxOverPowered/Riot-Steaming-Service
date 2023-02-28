@@ -9,7 +9,6 @@ const TorServer = ({ movieId, hash, backdrop_path }) => {
       .then((response) => response.json())
       .then((data) => {
         setMovieObject(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error(error);

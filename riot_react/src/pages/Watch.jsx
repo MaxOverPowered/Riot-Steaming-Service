@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import {
   getGenresNameByMovieId,
   getMovieById,
-  getMovieGenre,  
+  getMovieGenre,
 } from "../util/ApiUtils";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +14,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SimilarMovies from "../components/SimilarMovies";
 import useCurrentUser from "../components/useCurrentUser";
+import { Container } from "react-bootstrap";
 
 const Watch = (props) => {
   const [movieGenre, setMovieGenre] = useState([false]);
@@ -33,7 +34,7 @@ const Watch = (props) => {
         console.error(` Err: ${err}`);
       });
   };
-  
+
   useEffect(() => {
     movieGenreList();
     getMovieById(id)
@@ -45,7 +46,7 @@ const Watch = (props) => {
       });
   }, [id]);
   return (
-    <div>
+    <Container>
       <Navbar showSearchBox={false} />
       {isLoggedIn && (
         <div className="bg-gray-900 h-screen flex items-center justify-center">
@@ -103,8 +104,7 @@ const Watch = (props) => {
           </div>
         </div>
       )}
-      <Footer />
-    </div>
+    </Container>
   );
 };
 export default Watch;

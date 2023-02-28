@@ -8,14 +8,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer
-      className="bg-black bg-opacity-50 text-lightgrey py-5 text-center font-sans"
-      style={{
-        position: "relative",
-        top: "33rem",
-        width: "100%",
-      }}
-    >
+    <footer className="bg-black text-white text-center font-sans py-0.5 absolute bottom-0 w-full bg-opacity-25">
+
       <div className="flex justify-center">
         <a href="#">
           <FontAwesomeIcon

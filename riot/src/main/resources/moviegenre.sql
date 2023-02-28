@@ -1,0 +1,32 @@
+--
+-- SET statement_timeout = 0;
+-- SET lock_timeout = 0;
+-- SET idle_in_transaction_session_timeout = 0;
+-- SET standard_conforming_strings = on;
+-- SELECT pg_catalog.set_config('search_path', '', false);
+-- SET check_function_bodies = false;
+-- SET xmloption = content;
+-- SET client_min_messages = warning;
+-- SET row_security = off;
+-- SET default_tablespace = '';
+-- SET default_table_access_method = heap;
+INSERT INTO public.movie_genre VALUES (28, 'Action');
+INSERT INTO public.movie_genre VALUES (12, 'Adventure');
+INSERT INTO public.movie_genre VALUES (16, 'Animation');
+INSERT INTO public.movie_genre VALUES (35, 'Comedy');
+INSERT INTO public.movie_genre VALUES (80, 'Crime');
+INSERT INTO public.movie_genre VALUES (99, 'Documentary');
+INSERT INTO public.movie_genre VALUES (18, 'Drama');
+INSERT INTO public.movie_genre VALUES (10751, 'Family');
+INSERT INTO public.movie_genre VALUES (14, 'Fantasy');
+INSERT INTO public.movie_genre VALUES (36, 'History');
+INSERT INTO public.movie_genre VALUES (27, 'Horror');
+INSERT INTO public.movie_genre VALUES (10402, 'Music');
+INSERT INTO public.movie_genre VALUES (9648, 'Mystery');
+INSERT INTO public.movie_genre VALUES (10749, 'Romance');
+INSERT INTO public.movie_genre VALUES (878, 'Science Fiction');
+INSERT INTO public.movie_genre VALUES (10770, 'TV Movie');
+INSERT INTO public.movie_genre VALUES (53, 'Thriller');
+INSERT INTO public.movie_genre VALUES (10752, 'War');
+INSERT INTO public.movie_genre VALUES (37, 'Western');
+

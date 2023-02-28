@@ -14,13 +14,19 @@ import java.util.Set;
 public class WelcomeController {
 
     private final MovieService movieService;
+    int count = 1;
 
     public WelcomeController(MovieService movieService) {
         this.movieService = movieService;
 
     }
+
     @GetMapping
     public List<Movie> movieList() {
+        if (count == 1) {
+            movieService.jsonMovieInDatabase();
+            count++;
+        }
         return movieService.movieList();
     }
 }

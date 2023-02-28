@@ -43,7 +43,7 @@ class Signup extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.validateUsernameAvailability =
-    this.validateUsernameAvailability.bind(this);
+      this.validateUsernameAvailability.bind(this);
     this.validateEmailAvailability = this.validateEmailAvailability.bind(this);
     this.isFormInvalid = this.isFormInvalid.bind(this);
   }
@@ -72,7 +72,6 @@ class Signup extends Component {
     console.log("ajunge in regster");
     signup(signupRequest)
       .then((response) => {
-
         notification.success({
           description:
             "Thank you! You're successfully registered. Please Login to continue!",
@@ -100,115 +99,134 @@ class Signup extends Component {
   render() {
     return (
       <div className="outer-container">
-      <div className="signup-container" style={{ backgroundColor: "#111827" }}>
-        <h1 className="page-title">Sign Up</h1>
-        <div className="signup-content" >
-          <form onSubmit={this.handleSubmit} className="signup-form">
-            <FormItem
-              label={<span style={{color: "#9932CC"}}>Full Name</span>}
-              validateStatus={this.state.name.validateStatus}
-              help={this.state.name.errorMsg}
-            >
-              <Input
-                size="large"
-                name="name"
-                autoComplete="off"
-                placeholder="Full name"
-                value={this.state.name.value}
-                onChange={(event) =>
-                  this.handleInputChange(event, this.validateName)
-                }
-              />
-            </FormItem>
-            <FormItem
-              label={<span style={{color: "#9932CC"}}>Username</span>}
-              hasFeedback
-              validateStatus={this.state.username.validateStatus}
-              help={this.state.username.errorMsg}
-            >
-              <Input
-                size="large"
-                name="username"
-                autoComplete="off"
-                placeholder="Username"
-                value={this.state.username.value}
-                onBlur={this.validateUsernameAvailability}
-                onChange={(event) =>
-                  this.handleInputChange(event, this.validateUsername)
-                }
-              />
-            </FormItem>
-            <FormItem
-              label={<span style={{color: "#9932CC"}}>Date of Birth</span>}
-              validateStatus={this.state.userDateOfBirth.validateStatus}
-            >
-              <Input
-                type="date"
-                placeholder="Enter BirthDate"
-                value={this.state.userDateOfBirth.value}
-                name="userDateOfBirth"
-                max={current}
-                onChange={(event) =>
-                  this.handleInputChange(event, this.validDateOfBirth)
-                }
-              />
-            </FormItem>
-            <FormItem
-              label={<span style={{color: "#9932CC"}}>Email</span>}
-              hasFeedback
-              validateStatus={this.state.email.validateStatus}
-              help={this.state.email.errorMsg}
-            >
-              <Input
-                size="large"
-                name="email"
-                type="email"
-                autoComplete="off"
-                placeholder="Your email"
-                value={this.state.email.value}
-                onBlur={this.validateEmailAvailability}
-                onChange={(event) =>
-                  this.handleInputChange(event, this.validateEmail)
-                }
-              />
-            </FormItem>
-            <FormItem
-              label={<span style={{color: "#9932CC"}}>Password</span>}
-              validateStatus={this.state.password.validateStatus}
-              help={this.state.password.errorMsg}
-            >
-              <Input
-                size="large"
-                name="password"
-                type="password"
-                autoComplete="off"
-                placeholder="A password between 6 to 20 characters"
-                value={this.state.password.value}
-                onChange={(event) =>
-                  this.handleInputChange(event, this.validatePassword)
-                }
-              />
-            </FormItem>
-
-            <FormItem>
-              <Button
-              type="primary"
-              htmlType="submit"
-              size="large"
-              className="signup-form-button"
-              disabled={this.isFormInvalid()}
-              onSubmit={this.handleSubmit}
-              style={{ backgroundColor: "#9932CC", transition:"background-color 0.2s ease-in-out"}}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#9932CC"}
+        <div
+          className="signup-container"
+          style={{ backgroundColor: "#111827" }}
+        >
+          <h1 className="page-title">Sign Up</h1>
+          <div className="signup-content">
+            <form onSubmit={this.handleSubmit} className="signup-form">
+              <FormItem
+                label={<span style={{ color: "#9932CC" }}>Full Name</span>}
+                validateStatus={this.state.name.validateStatus}
+                help={this.state.name.errorMsg}
               >
-                Sign up
-              </Button>
-              <span style={{color: "#9932CC"}}>Already registered? <Link to="/auth/login" style={{color:"#9932CC"}}>Login now!</Link></span>
-            </FormItem>
-          </form>
+                <Input
+                  size="large"
+                  name="name"
+                  autoComplete="off"
+                  placeholder="Full name"
+                  value={this.state.name.value}
+                  onChange={(event) =>
+                    this.handleInputChange(event, this.validateName)
+                  }
+                />
+              </FormItem>
+              <FormItem
+                label={<span style={{ color: "#9932CC" }}>Username</span>}
+                hasFeedback
+                validateStatus={this.state.username.validateStatus}
+                help={this.state.username.errorMsg}
+              >
+                <Input
+                  size="large"
+                  name="username"
+                  autoComplete="off"
+                  placeholder="Username"
+                  value={this.state.username.value}
+                  onBlur={this.validateUsernameAvailability}
+                  onChange={(event) =>
+                    this.handleInputChange(event, this.validateUsername)
+                  }
+                />
+              </FormItem>
+              <FormItem
+                label={<span style={{ color: "#9932CC" }}>Date of Birth</span>}
+                validateStatus={this.state.userDateOfBirth.validateStatus}
+              >
+                <Input
+                  type="date"
+                  placeholder="Enter BirthDate"
+                  value={this.state.userDateOfBirth.value}
+                  name="userDateOfBirth"
+                  max={current}
+                  onChange={(event) =>
+                    this.handleInputChange(event, this.validDateOfBirth)
+                  }
+                />
+              </FormItem>
+              <FormItem
+                label={<span style={{ color: "#9932CC" }}>Email</span>}
+                hasFeedback
+                validateStatus={this.state.email.validateStatus}
+                help={this.state.email.errorMsg}
+              >
+                <Input
+                  size="large"
+                  name="email"
+                  type="email"
+                  autoComplete="off"
+                  placeholder="Your email"
+                  value={this.state.email.value}
+                  onBlur={this.validateEmailAvailability}
+                  onChange={(event) =>
+                    this.handleInputChange(event, this.validateEmail)
+                  }
+                />
+              </FormItem>
+              <FormItem
+                label={<span style={{ color: "#9932CC" }}>Password</span>}
+                validateStatus={this.state.password.validateStatus}
+                help={this.state.password.errorMsg}
+              >
+                <Input
+                  size="large"
+                  name="password"
+                  type="password"
+                  autoComplete="off"
+                  placeholder="A password between 6 to 20 characters"
+                  value={this.state.password.value}
+                  onChange={(event) =>
+                    this.handleInputChange(event, this.validatePassword)
+                  }
+                />
+              </FormItem>
+
+              <FormItem>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  size="large"
+                  className="signup-form-button"
+                  disabled={this.isFormInvalid()}
+                  onSubmit={this.handleSubmit}
+                  style={{
+                    backgroundColor: "#9932CC",
+                    transition: "background-color 0.2s ease-in-out",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = "transparent")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.backgroundColor = "#9932CC")
+                  }
+                >
+                  Sign up
+                </Button>
+                <span style={{ color: "#9932CC" }}>
+                  Already registered?{" "}
+                  <Link
+                    onClick={() => this.props.history.push("/auth/login")}
+                    to="/auth/login"
+                    style={{ color: "#9932CC" }}
+                  >
+                    Login now!
+                  </Link>
+                </span>
+              </FormItem>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     );
   }
